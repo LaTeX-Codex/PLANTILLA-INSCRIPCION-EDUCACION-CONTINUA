@@ -1,0 +1,137 @@
+\documentclass[letterpaper, 12pt, titlepage]{article} % Tipo de documento, configurado con: tamaño carta, tamaño de fuente 12pt, inclusión de página de título
+\sloppy
+\usepackage{wallpaper}
+\CenterWallPaper{1.0}{bg.jpg}
+% ================================================================
+%* PAQUETES BÁSICOS Y CONFIGURACIÓN ESENCIAL
+% ================================================================
+\usepackage[utf8]{inputenc}         % Codificación de caracteres UTF-8
+\usepackage[spanish]{babel}         % Localización en español (guiones, títulos)
+\usepackage[left=2cm, right=2cm, top=4.25cm, bottom=3.1cm]{geometry}   % Configuración de márgenes de página
+%\usepackage[htt]{hyphenat}
+
+% ================================================================
+%* TIPOGRAFÍA Y FORMATO DE TEXTO
+% ================================================================
+%\usepackage{fontspec}              % Manejo de fuentes con XeLaTeX
+%\setmainfont{Myriad Pro} % Fuente principal (Myriad Pro)
+\usepackage{courier}
+\renewcommand{\familydefault}{\ttdefault}
+%\usepackage{helvet}                         % Fuente Sans-Serif (Helvetica)
+%\renewcommand{\familydefault}{\sfdefault}   % Establece Helvet como fuente principal
+\usepackage{setspace}                       % Control de interlineado (1.5, doble espacio)
+\usepackage{parskip}                        % Espaciado entre párrafos (en lugar de sangría)
+%\usepackage{ragged2e}                       % Mejor manejo de justificación de texto
+
+\renewcommand{\thesection}{\Roman{section}} % Numeración romana para secciones
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}} % Subsecciones: 1.1, 1.2...
+\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}} % Subsubsecciones: 1.1.1, 1.1.2...
+
+% ================================================================
+%* ELEMENTOS GRÁFICOS Y DISEÑO
+% ================================================================
+\usepackage{graphicx}               % Manejo de imágenes (inserción y escalado)
+
+% ================================================================
+%* TABLAS PROFESIONALES
+% ================================================================
+\usepackage{booktabs}              % Reglas tipográficas para tablas (formato APA)
+\usepackage{xltabular}             % Tablas largas que ocupan todo el ancho del texto
+\usepackage{array}
+%\setlength{\extrarowheight}{5pt} % Ajusta este valor según necesites
+\usepackage[table]{xcolor}
+% ================================================================
+% LISTAS Y ESTRUCTURAS
+% ================================================================
+\usepackage{enumitem}                   % Personalización avanzada de listas
+\setlist{nosep, leftmargin=*, wide=0pt} % Listas ultra compactas
+
+% ================================================================
+%* HIPERVÍNCULOS Y METADATOS PDF
+% ================================================================
+\usepackage[hyphens]{url}
+\usepackage{hyperref}             % Hipervínculos y referencias internas
+\hypersetup{
+	breaklinks=true,                % Configuración de hipervínculos
+	colorlinks=true,                % Habilita los enlaces coloreados
+	linkcolor=blue,                 % Color de los enlaces internos
+	urlcolor=blue,                  % Color de los enlaces externos
+	citecolor=blue,                 % Color de las citas
+	pdfborder={0 0 0}               % Sin bordes en los enlaces
+}
+
+% ================================================================
+%* TAREAS PENDIENTES Y ANOTACIONES
+% ================================================================
+\setlength{\marginparwidth}{2cm} % Soluciona el problema de \todonotes
+\usepackage{todonotes} % Paquete principal
+\setuptodonotes{
+	size=\tiny, % Tamaño de las notas
+}
+% Comandos personalizados (opcional)
+\newcommand{\pendiente}[1]{\todo[color=red!30, inline]{#1}}
+\newcommand{\revisar}[1]{\todo[color=yellow!30, inline]{#1}}
+\newcommand{\actualizar}[1]{\todo[color=green!30, inline]{#1}}
+
+% ================================================================
+%! CONFIGURACIONES FINALES
+% ================================================================
+\newcommand{\universidad}{Universidad de las Regiones Autónomas de la Costa Caribe Nicaragüense} % Nombre de la universidad
+
+% ================================================================
+% PAQUETE LOREM IPSUM PARA TEXTO DE EJEMPLO, BORRAR EN PRODUCCIÓN
+% ================================================================
+\usepackage{lipsum} % Generador de texto de ejemplo
+
+% ================================================================
+% INICIO DEL DOCUMENTO (contenido principal)
+% ================================================================
+\begin{document}
+	\begin{titlepage}
+		\null
+		\vfill
+		\centering
+		\includegraphics[width=0.15\textwidth]{uraccan_logo.png}
+		
+		\section*{HOJA DE INSCRIPCIÓN DE EDUCACIÓN CONTINUA}
+		
+		%\small
+		\begin{xltabular}{\linewidth}{|>\bfseries{l}|X|}
+			\hline
+			\cellcolor{black} \color{white} Entidad & \universidad\\
+			\hline
+			\cellcolor{black} \color{white} Nombre del Programa & \\
+			\hline
+			\cellcolor{black} \color{white} Objetivo & \\
+			\hline
+			\cellcolor{black} \color{white} Protagonistas & \\
+			\hline
+			\cellcolor{black} \color{white} Fecha de Inicio & \\
+			\hline
+			\cellcolor{black} \color{white} Fecha de Finalización & \\
+			\hline
+			\cellcolor{black} \color{white} Duración en Horas & \\
+			\hline
+			\cellcolor{black} \color{white} Modalidad & \\
+			\hline
+			\cellcolor{black} \color{white} Frecuencia & \\
+			\hline
+			\cellcolor{black} \color{white} Instancia Solicitante & \\
+			\hline
+		\end{xltabular}
+		
+		\vspace{1.5cm}
+		\begin{xltabular}{\linewidth}{@{}X X@{}}
+			Dra. Gretta Paiz Malespin & MSc. Marcia Watler Reyes\\
+			Departamento de Posgrado y Educación Continua & Departamento de Registro y Archivo Institucional\\
+			& \\
+			& \\
+			& \\
+			& \\
+			Dr. William Flores López & \\
+			Director Académico & \\
+		\end{xltabular}
+		
+		\vfill
+	\end{titlepage}
+\end{document}
